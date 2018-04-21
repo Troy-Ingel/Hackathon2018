@@ -205,4 +205,27 @@
     "type": "fact",
     "id": "19"
   }
+
+
+  {
+    "question": "Each suicide intimately affects at least 3 other people.",
+    "type": "myth",
+    "id": "20"
+  },{
+    "question": "Each suicide intimately affects at least 6 other people.",
+    "type": "fact",
+    "id": "20"
+  }
+
+  {
+    "question": "On average, 1 person commits suicide every 9.7 minutes",
+    "type": "myth",
+    "id": "21"
+  },{
+    "question": "On average, 1 person commits suicide every 16.2 minutes.",
+    "type": "fact",
+    "id": "21"
+  }
+
+
 ]
