@@ -204,7 +204,7 @@
     "question": "Hereditary factors can contribute to developing bipolar disorder, but it is not a purely genetic illness.",
     "type": "fact",
     "id": "19"
-  }
+  },
 
 
   {
@@ -215,14 +215,14 @@
     "question": "Each suicide intimately affects at least 6 other people.",
     "type": "fact",
     "id": "20"
-  }
+  },
 
   {
-    "question": "On average, 1 person commits suicide every 9.7 minutes",
+    "question": "Fifty percent of all people who die by suicide have a diagnosable psychiatric disorder at the time of their death.",
     "type": "myth",
     "id": "21"
   },{
-    "question": "On average, 1 person commits suicide every 16.2 minutes.",
+    "question": "Ninety percent of all people who die by suicide have a diagnosable psychiatric disorder at the time of their death.",
     "type": "fact",
     "id": "21"
   }
