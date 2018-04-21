@@ -2,10 +2,10 @@ angular
 .module('mainApp')
 .factory('Factory', Factory);
 
-ArduinoFactory.$inject = ['$http'];
+Factory.$inject = ['$http'];
 
 // set up the services needed for this factory
-function ArduinoFactory($http){
+function Factory($http){
 
 	var service = {
 		

@@ -1,10 +1,10 @@
 angular
 .module('mainApp')
-.controller('ArduinoController', ArduinoController);
+.controller('Controller', Controller);
 
 ArduinoController.$inject = ['$scope', '$location'];
 
-function ArduinoController($scope, $location, Factory){
+function Controller($scope, $location, Factory){
 	
 	
 		activate();
