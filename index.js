@@ -19,7 +19,7 @@ app.use(morgan('dev'))
 // start server
 var server = app.listen(port, function() {
 	console.log('Sever running at localhost:' + port);
-	//initDB();
+	initDB();
 });
 
 // routes
