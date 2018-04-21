@@ -149,7 +149,7 @@ class MainApp extends React.Component {
                 {
                   this.state.leaders.map(l => (
                     <ListItem>
-                      <ListItemText primary={`${l.name}  -  ${l.latest_score}`} secondary={`Total improvement: ${(l.latest_score - l.first_score)/l.first_score*100}%`}/>
+                      <ListItemText primary={`${l.name}  -  ${l.latest_score}`} secondary={`Total improvement: ${Math.round((l.latest_score - l.first_score)/l.first_score*100)}%`}/>
                     </ListItem>
                   ))
                 }
@@ -172,7 +172,7 @@ class MainApp extends React.Component {
                   <div>
                     <DialogContent>
                       <DialogContentText id="alert-dialog-slide-description">
-                        You improved by {(this.state.latest_score - this.state.first_score)/this.state.first_score * 100}% from your first time!
+                        You improved by {Math.round((this.state.latest_score - this.state.first_score)/this.state.first_score * 100)}% from your first time!
                       </DialogContentText>
                     </DialogContent>
                     <DialogActions>
@@ -202,6 +202,7 @@ class MainApp extends React.Component {
                             console.log(data);
                             cookies.set('userId', data._id);
                             this.setState({open: false});
+                            this.props.do();
                           })
                         }} color="primary">
                         Done
@@ -221,6 +222,31 @@ class MainApp extends React.Component {
     if(this.state.isPlaying) {
       return (
         <div className="main playing">
+          <Dialog
+            open={this.state.d}
+            transition={Transition}
+            keepMounted
+            onClose={() => this.setState({d: false})}
+            aria-labelledby="alert-dialog-slide-title"
+            aria-describedby="alert-dialog-slide-description"
+          >
+            <DialogTitle id="alert-dialog-slide-title">
+              {this.state.d && this.state.d.title}
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-slide-description">
+                {this.state.d && this.state.d.sub}
+                <br />
+                <br />
+                {this.state.d && this.state.d.ans}
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={() => this.setState({d: false})} color="primary">
+                Continue
+              </Button>
+            </DialogActions>
+          </Dialog>
           <h2>Current Score: {this.state.score}. Keep it up!</h2>
           {
             this.state.qs.map(m => {
@@ -234,11 +260,18 @@ class MainApp extends React.Component {
                       </CardContent>
                       <CardActions>
                         <Button variant="raised" color="primary" size="small" onClick={() => {
-                            if(m.type === "fact") this.setState({score: this.state.score + 5});
+                            if(m.type === "fact") {
+                              this.setState({score: this.state.score + 5});
+                            } else {
+                              this.setState({d: {title: 'That was actually a myth!', sub: 'The fact is:', ans: myths.find(my => my.id === m.id && my.type === 'fact').question}});
+                            }
                             this.setState({qs: this.remove(m)});
                           }}>Fact</Button>
                         <Button variant="raised" color="secondary" size="small" onClick={() => {
                             if(m.type === "myth") this.setState({score: this.state.score + 5});
+                            else {
+                              this.setState({d: {title: 'That was actually a fact!', sub: 'Here it is again:', ans: m.question}});
+                            }
                             this.setState({qs: this.remove(m)});
                           }}>Myth</Button>
                       </CardActions>
@@ -257,6 +290,8 @@ class MainApp extends React.Component {
                               <ListItem button onClick={() => {
                                   if(option === m.answer) {
                                     this.setState({score: this.state.score + 5});
+                                  } else {
+                                    this.setState({d: {title: "Oops, that wasn't quite right", sub: 'The right answer was:', ans: m.answer}});
                                   }
                                   this.setState({qs: this.remove(m)});
                                 }}>

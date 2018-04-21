@@ -57,6 +57,16 @@ class App extends Component {
 
   showLeaders = () => {
     this.setState({l : true});
+    const userId = cookies.get('userId');
+
+    if(userId) {
+      fetch(`${url}user/${userId}`).then(function(response) {
+        return response.json();
+      })
+      .then(user => {
+        this.setState(user);
+      });
+    }
   }
 
   render() {
