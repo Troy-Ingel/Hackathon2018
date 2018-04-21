@@ -14,7 +14,8 @@ import MainApp from './main';
 import Icon from 'material-ui/Icon';
 import './App.css';
 
-const url = 'http://localhost:8080/';
+import {url} from './main';
+// const url = 'http://localhost:8080/';
 
 const styles = {
   root: {
@@ -75,11 +76,11 @@ class App extends Component {
       <div>
         <AppBar position="static">
         <Toolbar>
-          <Button className={classes.btn} onClick={() => this.setState({l: !this.state.l})}>{this.state.l ? '<' : 'Leaderboards'}</Button>
           <Typography variant="title" color="inherit" className={classes.flex}>
             The more you know 🌈
           </Typography>
           {this.state.name}
+          <Button className={classes.btn} onClick={() => this.setState({l: !this.state.l})}>{this.state.l ? 'Back' : 'Leaderboards'}</Button>
         </Toolbar>
       </AppBar>
               <MainApp showLeaders={this.state.l} do={this.showLeaders}/>

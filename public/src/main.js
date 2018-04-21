@@ -16,6 +16,7 @@ import Snackbar from 'material-ui/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
 import './App.css';
 
+
 import Dialog, {
   DialogActions,
   DialogContent,
@@ -27,7 +28,7 @@ import Slide from 'material-ui/transitions/Slide';
 import myths from './myths.json';
 import defs from './mental.json';
 
-const url = 'http://localhost:8080/';
+export const url = 'http://10.0.0.193:8080/';
 var myHeaders = new Headers();
 myHeaders.append('Content-Type', 'application/json');
 
@@ -50,6 +51,9 @@ const styles = {
   },
   leader: {
     width: '80%',
+  },
+  mine: {
+    background: 'rgba(63, 81, 181, 0.3)'
   }
 };
 
@@ -162,9 +166,9 @@ class MainApp extends React.Component {
             <CardContent>
               <List>
                 {
-                  this.state.leaders.map(l => (
-                    <ListItem>
-                      <ListItemText primary={`${l.name}  -  ${l.latest_score}`} secondary={`Total improvement: ${Math.round((l.latest_score - l.first_score)/(parseInt(l.first_score) || 1)*100)}%`}/>
+                  this.state.leaders.sort((a,b) => b.latest_score - a.latest_score).map(l => (
+                    <ListItem className={l._id === this.state._id ? classes.mine : undefined}>
+                      <ListItemText primary={`${l.name}  -  ${l.latest_score}`} secondary={`Total improvement: ${Math.max(Math.round((l.latest_score - l.first_score)/(parseInt(l.first_score) || 1)*100), 0)}%`}/>
                     </ListItem>
                   ))
                 }
@@ -187,7 +191,7 @@ class MainApp extends React.Component {
                   <div>
                     <DialogContent>
                       <DialogContentText id="alert-dialog-slide-description">
-                        You improved by {Math.round((this.state.latest_score - this.state.first_score)/(parseInt(this.state.first_score) || 1) * 100)}% from your first time!
+                        You improved by {Math.max(Math.round((this.state.latest_score - this.state.first_score)/(parseInt(this.state.first_score) || 1) * 100), 0)}% from your first time!
                       </DialogContentText>
                     </DialogContent>
                     <DialogActions>
