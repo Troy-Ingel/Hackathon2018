@@ -1,6 +1,10 @@
 var Collection = require('../models/Collection');
 
 module.exports = function(app){
+    app.get('/test', function(req, res) {
+      res.json({hi: 'asd'});
+    });
+
     app.post('/authentication/register', function(req, res){
         let attr1 = req.body.attr1;
         let attr2 = req.body.attr2;
@@ -17,5 +21,3 @@ module.exports = function(app){
         });
     });
 }
-
-

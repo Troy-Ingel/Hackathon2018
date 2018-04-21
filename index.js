@@ -25,8 +25,6 @@ var server = app.listen(port, function() {
 // routes
 require('./routes/api')(app);
 
-
 function initDB(){
 	var db = mongoose.connect(mongoDriver);
 }
-
