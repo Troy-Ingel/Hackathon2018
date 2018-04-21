@@ -1,23 +1,40 @@
-var Collection = require('../models/Collection');
+var User = require('../models/User');
 
 module.exports = function(app){
-    app.get('/test', function(req, res) {
-      res.json({hi: 'asd'});
+    app.get('/user/:id', function(req, res) {
+        User.find({_id: req.params.id}, function(err, user){
+            res.json(user);
+        })
+    });
+    app.post('/user', function(req, res) {
+        let user = {
+            name: req.body.name,
+            first_score: req.body.first_score,
+        }
+
+        User.create(user, function(err, user){
+            if(err) console.log('cant create user');
+            if(user) console.log('user create');
+
+            res.json(user);
+        });
+    });
+    app.put('/user/:id', function(req, res) {
+        console.log(req.body);
+        User.update({"oid": req.body._id}, {latest_score: req.body.latest_score}, function(err, user){
+            if(err) console.log(err);
+            if(user) console.log(user);
+
+            res.end();
+        });
     });
 
-    app.post('/authentication/register', function(req, res){
-        let attr1 = req.body.attr1;
-        let attr2 = req.body.attr2;
+    app.get('/users', function(req, res) {
+        User.find({}, function(err, users){
+            if(err) console.log(err);
+            if(users) console.log(users);
 
-        let collection = new Collection({
-            attr1,
-            attr2
-        });
-
-        Collection.createUser(collection, function(err, collection){
-            console.log(err);
-            if(err) res.status(401).json({})
-            if(collection) res.status(200).json({})
-        });
+            res.json(users);
+        })
     });
 }
