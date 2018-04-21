@@ -1,96 +1,208 @@
 [
   {
     "question": "Kids can’t get depression and anxiety disorders, only adults can.",
-    "type": "myth"
-  }, {
-    "question": "Kids only get a mental illness because they have bad parents.",
-    "type": "myth"
-  }, {
-    "question": "Mental illness is the same as being mentally disabled (sometimes incorrectly called mental retardation).",
-    "type": "myth"
-  }, {
-    "question": "Having a mental illness means you’re a wimp who can’t handle life.",
-    "type": "myth"
-  }, {
-    "question": "People with mental health challenges have to take special tests to get a job or go to college.",
-    "type": "myth"
-  }, {
-    "question": "People with mental illnesses have trouble handling school work, a job, and daily tasks.",
-    "type": "myth"
-  }, {
-    "question": "If you have a mental illness, it will be harder to get an apartment or house once you grow up and you won’t be able to live on your own.",
-    "type": "myth"
-  }, {
-    "question": "When people have mental illnesses, they will never get better.",
-    "type": "myth"
-  }, {
-    "question": "Talking about your mental health challenge is a waste of time. It’s better to just take medicine.",
-    "type": "myth"
-  }, {
-    "question": "People with a mental illness are dangerous and violent.",
-    "type": "myth"
-  }, {
-    "question": "Mental illness is more common in some racial groups than others.",
-    "type": "myth"
-  }, {
-    "question": "I can’t help someone with a mental illness. Only a doctor can.",
-    "type": "myth"
+    "type": "myth",
+    "id": "1"
   }, {
     "question": "Kids can develop a mental illness, like depression and anxiety disorders. This can happen to anyone at any age.",
-    "type": "fact"
+    "type": "fact",
+    "id": "1"
+  },
+
+
+  {
+    "question": "Kids only get a mental illness because they have bad parents.",
+    "type": "myth",
+    "id": "2"
   }, {
     "question": "Mental illness is not caused by doing something wrong. Also, you can’t cause someone else to have a mental illness. Doctors think that mental illness is caused by a mix of what’s going on in your body and what’s happening around you.",
-    "type": "fact"
-  }, {
+    "type": "fact",
+    "id": "2"
+  },
+
+
+  {
+    "question": "Mental illness is the same as being mentally disabled (sometimes incorrectly called mental retardation).",
+    "type": "myth",
+    "id": "3"
+  },{
     "question": "Mental illness has nothing to do with how smart you are. A mental disability is a cognitive disability which means it’s a different journey with different challenges. It’s still important to treat all people with respect, because you don’t know what life is like in their shoes.",
-    "type": "fact"
+    "type": "fact",
+    "id": "3"
+  }, 
+
+
+  {
+    "question": "Having a mental illness means you’re a wimp who can’t handle life.",
+    "type": "myth",
+    "id": "4"
   }, {
     "question": "Your personality or ability to handle your feelings does not cause mental illness. Mental illness isn’t just “in your head” or something that goes away if you try hard. The right combination of what helps is different for each person. Once they find something that helps them, most people with a mental illness live healthy, full lives.",
-    "type": "fact"
+    "type": "fact",
+    "id": "4"
+  },
+
+
+  {
+    "question": "People with mental health challenges have to take special tests to get a job or go to college.",
+    "type": "myth",
+    "id": "5"
   }, {
     "question": "People with mental health challenges do not have to take special tests to get into college, get a house, or get a job. They can work and learn and do all the things that people without mental health challenges can do.",
-    "type": "fact"
+    "type": "fact",
+    "id": "5"
+  },
+
+  {
+    "question": "People with mental illnesses have trouble handling school work, a job, and daily tasks.",
+    "type": "myth",
+    "id": "6"
   }, {
     "question": "It is common for all people to sometimes have trouble at school, at home, at jobs and feel sometimes like they don’t know what to do. No matter what, it’s good to talk to others and learn what works best for you. What helps you calm down? What makes you happy and what makes you sad? Knowing these things will help you find a way to do well in school and life.",
-    "type": "fact"
+    "type": "fact",
+    "id": "6"
+  },
+
+
+  {
+    "question": "If you have a mental illness, it will be harder to get an apartment or house once you grow up and you won’t be able to live on your own.",
+    "type": "myth",
+    "id": "7"
   }, {
     "question": "All mental illnesses are different, but being diagnosed with one will not keep you from being able to grow up, learn how to take care of yourself, and get an apartment or house like everyone else.",
-    "type": "fact"
+    "type": "fact",
+    "id": "7"
+  },
+
+
+  {
+    "question": "When people have mental illnesses, they will never get better.",
+    "type": "myth",
+    "id": "8"
   }, {
     "question": "People diagnosed with mental illnesses can get better. Every illness is different. Some people feel better when they talk to someone, like a friend or a doctor, or take medication. Most people need help from friends and family to talk and figure out how to live with their illness. Not all people have to take medicine or see a therapist for the rest of their lives.",
-    "type": "fact"
+    "type": "fact",
+    "id": "8"
+  },
+
+
+  {
+    "question": "Talking about your mental health challenge is a waste of time. It’s better to just take medicine.",
+    "type": "myth",
+    "id": "9"
   }, {
     "question": "If you have a broken leg, it will not get better with just aspirin. It also takes time and exercise and hard work. In a way, having a mental illness is the same. You have to be patient, get help, and talk about it – and you’ll start to feel better, too.",
-    "type": "fact"
+    "type": "fact",
+    "id": "9"
+  },
+
+
+  {
+    "question": "People with a mental illness are dangerous and violent.",
+    "type": "myth",
+    "id": "10"
   }, {
     "question": "Most people diagnosed with mental illnesses are not violent. Most violence in the world is not caused by people with mental illnesses. In fact, a person with a mental illness is more likely to be the one who gets hurt or bullied by someone else.",
-    "type": "fact"
+    "type": "fact",
+    "id": "10"
+  },
+
+
+  {
+    "question": "Mental illness is more common in some racial groups than others.",
+    "type": "myth",
+    "id": "11"
   }, {
     "question": "Mental illness can happen to anyone. It doesn’t matter what you look like, where you live or where you are from.",
-    "type": "fact"
+    "type": "fact",
+    "id": "11"
+  },
+
+
+  {
+    "question": "I can’t help someone with a mental illness. Only a doctor can.",
+    "type": "myth",
+    "id": "12"
   }, {
     "question": "You can help people who have a mental illness. Don’t call people words like “crazy” or “mental.” If you know people with mental health challenges, try to get to know them and notice their talents and skills, not just their illness. Learn about mental wellness and share it with others. If you hear something that isn’t true, don’t be afraid to speak up and talk about what is true.",
-    "type": "fact"
+    "type": "fact",
+    "id": "12"
+  },
+
+
+  {
+    "question": "A mental illness does not impact a persons ability to cope with life’s ordinary demands and routines.",
+    "type": "myth",
+    "id": "13"
   },{
     "question": "A mental illness is a disease that causes mild to severe disturbances in thought and/or behavior, resulting in an inability to cope with life’s ordinary demands and routines.",
-    "type": "fact"
-  },{
+    "type": "fact",
+    "id": "13"
+  },
+
+  
+  {
     "question": "Depression is a bad mood or a state of mind.",
-    "type": "myth"
+    "type": "myth",
+    "id": "14"
   },{
+    "question": "Depression is a common and serious medical illness that negatively affects how you feel, the way you think and how you act",
+    "type": "fact",
+    "id": "14"
+  },
+
+
+  {
     "question": "1 in 7 American adults will have a psychiatric disorder during their lifetime.",
-    "type": "myth"
+    "type": "myth",
+    "id": "15"
   },{
+    "question": "1 in 4 American adults will have a psychiatric disorder during their lifetime.",
+    "type": "fact",
+    "id": "15"
+  },
+
+
+  {
     "question": "Bipolar disorder is a rare condition.",
-    "type": "myth"
+    "type": "myth",
+    "id": "16"
   },{
+    "question": "Bipolar disorder affects about 5.7 million American adults, or about 2.6% of the U.S. population 18 and older.",
+    "type": "fact",
+    "id": "16"
+  },
+
+
+  {
     "question": "Bipolar disorder is just another name for mood swings.",
-    "type": "myth"
+    "type": "myth",
+    "id": "17"
   },{
-    "question": "People who suffer from bipolar disorder can experience periods of stable or “normal” moods and wellness.",
-    "type": "fact"
+    "question": "Mood swings associated with bipolar disorder are very different than those of people without the condition",
+    "type": "fact",
+    "id": "17"
+  },
+
+
+  {
+    "question": "People who suffer from bipolar disorder never experience periods of stable or “normal” moods and wellness.",
+    "type": "myth",
+    "id": "18"
   },{
+    "question": "In between episodes of bipolar mania and/or depression, there will usually be periods of stable or “normal” moods and wellness.",
+    "type": "fact",
+    "id": "18"
+  },
+
+
+  {
     "question": "Genetics do not play a role in developing bipolar disorder.",
-    "type": "myth"
+    "type": "myth",
+    "id": "19"
+  },{
+    "question": "Hereditary factors can contribute to developing bipolar disorder, but it is not a purely genetic illness.",
+    "type": "fact",
+    "id": "19"
   }
 ]
