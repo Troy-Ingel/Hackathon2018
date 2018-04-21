@@ -11,6 +11,8 @@ import List from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import cookies from 'browser-cookies';
 import MainApp from './main';
+import Icon from 'material-ui/Icon';
+import './App.css';
 
 const url = 'http://localhost:8080/';
 
@@ -28,23 +30,33 @@ const styles = {
   list: {
     width: 250,
   },
+  btn: {
+    color: 'white'
+  }
 };
 
 class App extends Component {
   state = {
     isOpen: false,
-    name: ''
+    name: '',
+    l: false
   }
 
   componentDidMount() {
     const userId = cookies.get('userId');
 
-    fetch(`${url}user/${userId}`).then(function(response) {
-      return response.json();
-    })
-    .then(function(user) {
-      this.setState(user);
-    });
+    if(userId) {
+      fetch(`${url}user/${userId}`).then(function(response) {
+        return response.json();
+      })
+      .then(user => {
+        this.setState(user);
+      });
+    }
+  }
+
+  showLeaders = () => {
+    this.setState({l : true});
   }
 
   render() {
@@ -53,13 +65,14 @@ class App extends Component {
       <div>
         <AppBar position="static">
         <Toolbar>
+          <Button className={classes.btn} onClick={() => this.setState({l: !this.state.l})}>{this.state.l ? '<' : 'Leaderboards'}</Button>
           <Typography variant="title" color="inherit" className={classes.flex}>
             Title
           </Typography>
           {this.state.name}
         </Toolbar>
       </AppBar>
-              <MainApp/>
+              <MainApp showLeaders={this.state.l} do={this.showLeaders}/>
       </div>
     );
   }
