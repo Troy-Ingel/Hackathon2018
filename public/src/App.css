@@ -8,6 +8,12 @@
   display: flex;
 }
 
+@media only screen and (max-width: 600px) {
+  .MuiPaper-root-14.MuiPaper-elevation2-18.MuiPaper-rounded-15.MuiCard-root-113.MainApp-card-94 {
+    width: 80% !important;
+  }
+}
+
 h1 {
   text-align: center;
 }
