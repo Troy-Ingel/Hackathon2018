@@ -71,5 +71,26 @@
   }, {
     "question": "You can help people who have a mental illness. Don’t call people words like “crazy” or “mental.” If you know people with mental health challenges, try to get to know them and notice their talents and skills, not just their illness. Learn about mental wellness and share it with others. If you hear something that isn’t true, don’t be afraid to speak up and talk about what is true.",
     "type": "fact"
+  },{
+    "question": "A mental illness is a disease that causes mild to severe disturbances in thought and/or behavior, resulting in an inability to cope with life’s ordinary demands and routines.",
+    "type": "fact"
+  },{
+    "question": "Depression is a bad mood or a state of mind.",
+    "type": "myth"
+  },{
+    "question": "1 in 7 American adults will have a psychiatric disorder during their lifetime.",
+    "type": "myth"
+  },{
+    "question": "Bipolar disorder is a rare condition.",
+    "type": "myth"
+  },{
+    "question": "Bipolar disorder is just another name for mood swings.",
+    "type": "myth"
+  },{
+    "question": "People who suffer from bipolar disorder can experience periods of stable or “normal” moods and wellness.",
+    "type": "fact"
+  },{
+    "question": "Genetics do not play a role in developing bipolar disorder.",
+    "type": "myth"
   }
 ]
