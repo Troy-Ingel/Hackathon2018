@@ -98,6 +98,19 @@ class MainApp extends React.Component {
     qs: []// shuffleArray([...getRandomMyths(), ...getRandomDefs()]).slice(0
   }
 
+  componentDidMount() {
+    const userId = cookies.get('userId');
+
+    if(userId) {
+      fetch(`${url}user/${userId}`).then(function(response) {
+        return response.json();
+      })
+      .then(user => {
+        this.setState(user);
+      });
+    }
+  }
+
   componentWillReceiveProps(newProps) {
     if(newProps.showLeaders) {
       fetch(`${url}users`).then(res => res.json()).then(data => {
@@ -151,7 +164,7 @@ class MainApp extends React.Component {
                 {
                   this.state.leaders.map(l => (
                     <ListItem>
-                      <ListItemText primary={`${l.name}  -  ${l.latest_score}`} secondary={`Total improvement: ${Math.round((l.latest_score - l.first_score)/l.first_score*100)}%`}/>
+                      <ListItemText primary={`${l.name}  -  ${l.latest_score}`} secondary={`Total improvement: ${Math.round((l.latest_score - l.first_score)/(parseInt(l.first_score) || 1)*100)}%`}/>
                     </ListItem>
                   ))
                 }
@@ -174,7 +187,7 @@ class MainApp extends React.Component {
                   <div>
                     <DialogContent>
                       <DialogContentText id="alert-dialog-slide-description">
-                        You improved by {Math.round((this.state.latest_score - this.state.first_score)/this.state.first_score * 100)}% from your first time!
+                        You improved by {Math.round((this.state.latest_score - this.state.first_score)/(parseInt(this.state.first_score) || 1) * 100)}% from your first time!
                       </DialogContentText>
                     </DialogContent>
                     <DialogActions>
@@ -230,7 +243,7 @@ class MainApp extends React.Component {
             horizontal: 'left',
           }}
           open={this.state.s}
-          autoHideDuration={6000}
+          autoHideDuration={1000}
           onClose={() => this.setState({s: false})}
           SnackbarContentProps={{
             'aria-describedby': 'message-id',
@@ -338,9 +351,21 @@ class MainApp extends React.Component {
 
     return (
       <div className="main">
-        <h1>Welcome!</h1>
-        <h3>To start, click the button below.</h3>
-        <Button variant="raised" color="primary" onClick={() => this.setState({isPlaying: true, qs: shuffleArray([...getRandomMyths(), ...getRandomDefs()]), score: 0})}>Start</Button>
+        {
+          !this.state.name ? (
+            <div className="asdd">
+              <h1>Welcome!</h1>
+              <h3>To start, click the button below.</h3>
+              <Button variant="raised" color="primary" onClick={() => this.setState({d: false, s:false, isPlaying: true, qs: shuffleArray([...getRandomMyths(), ...getRandomDefs()]), score: 0})}>Start</Button>
+            </div>
+          ) : (
+            <div className="asdd">
+              <h1>Welcome back, {this.state.name}!</h1>
+              <h3>Your latest score is {this.state.latest_score}! Feel like beating it?</h3>
+              <Button variant="raised" color="primary" onClick={() => this.setState({d: false, s:false, isPlaying: true, qs: shuffleArray([...getRandomMyths(), ...getRandomDefs()]), score: 0})}>Let's do it</Button>
+            </div>
+          )
+        }
       </div>
     );
   }

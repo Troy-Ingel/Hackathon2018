@@ -77,7 +77,7 @@ class App extends Component {
         <Toolbar>
           <Button className={classes.btn} onClick={() => this.setState({l: !this.state.l})}>{this.state.l ? '<' : 'Leaderboards'}</Button>
           <Typography variant="title" color="inherit" className={classes.flex}>
-            Title
+            The more you know 🌈
           </Typography>
           {this.state.name}
         </Toolbar>
