@@ -12,6 +12,8 @@ import cookies from 'browser-cookies';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Card, { CardActions, CardContent, CardHeader } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
+import Snackbar from 'material-ui/Snackbar';
+import CloseIcon from '@material-ui/icons/Close';
 import './App.css';
 
 import Dialog, {
@@ -222,6 +224,30 @@ class MainApp extends React.Component {
     if(this.state.isPlaying) {
       return (
         <div className="main playing">
+          <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          open={this.state.s}
+          autoHideDuration={6000}
+          onClose={() => this.setState({s: false})}
+          SnackbarContentProps={{
+            'aria-describedby': 'message-id',
+          }}
+          message={<span id="message-id">Correct! 🎉</span>}
+          action={[
+            <IconButton
+              key="close"
+              aria-label="Close"
+              color="inherit"
+              className={classes.close}
+              onClick={() => this.setState({s: false})}
+            >
+              <CloseIcon />
+            </IconButton>,
+          ]}
+          />
           <Dialog
             open={this.state.d}
             transition={Transition}
@@ -261,14 +287,14 @@ class MainApp extends React.Component {
                       <CardActions>
                         <Button variant="raised" color="primary" size="small" onClick={() => {
                             if(m.type === "fact") {
-                              this.setState({score: this.state.score + 5});
+                              this.setState({s: true, score: this.state.score + 5});
                             } else {
                               this.setState({d: {title: 'That was actually a myth!', sub: 'The fact is:', ans: myths.find(my => my.id === m.id && my.type === 'fact').question}});
                             }
                             this.setState({qs: this.remove(m)});
                           }}>Fact</Button>
                         <Button variant="raised" color="secondary" size="small" onClick={() => {
-                            if(m.type === "myth") this.setState({score: this.state.score + 5});
+                            if(m.type === "myth") this.setState({s:true, score: this.state.score + 5});
                             else {
                               this.setState({d: {title: 'That was actually a fact!', sub: 'Here it is again:', ans: m.question}});
                             }
@@ -289,7 +315,7 @@ class MainApp extends React.Component {
                             m.options.map(option => (
                               <ListItem button onClick={() => {
                                   if(option === m.answer) {
-                                    this.setState({score: this.state.score + 5});
+                                    this.setState({s: true, score: this.state.score + 5});
                                   } else {
                                     this.setState({d: {title: "Oops, that wasn't quite right", sub: 'The right answer was:', ans: m.answer}});
                                   }
